@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 # Configuration
-LED_PIN = 18  # GPIO pin connected to the data pin of the WS2812B
-NUM_LEDS = 1  # Number of LEDs in the strip
+LED_PIN = 21  # GPIO pin connected to the data pin of the WS2812B
+NUM_LEDS = 300  # Number of LEDs in the strip
 # Timing constants
 T0H = 0.0000004  # 0.4us
 T0L = 0.00000085  # 0.85us
@@ -42,12 +42,15 @@ if __name__ == "__main__":
         while True:
             # Red
             set_led_color(255, 0, 0)
+            print("Setting LED RED")
             time.sleep(1)
             # Green
             set_led_color(0, 255, 0)
+            print("Setting LED Green")
             time.sleep(1)
             # Blue
             set_led_color(0, 0, 255)
+            print("Setting LED BLUE")
             time.sleep(1)
     except KeyboardInterrupt:
         GPIO.cleanup()
