@@ -47,6 +47,10 @@ def set_led_color(r, g, b):
         send_color(g, r, b)
     reset()
 
+def cleanup():
+    lgpio.gpiochip_close(h)
+    print("GPIO cleaned up")
+
 if __name__ == "__main__":
     try:
         while True:
@@ -55,7 +59,7 @@ if __name__ == "__main__":
             print("Setting LED WHITE at 20% brightness")
             time.sleep(1)
     except KeyboardInterrupt:
-        lgpio.gpiochip_close(h)
+        cleanup()
     except Exception as e:
         print(f"An error occurred: {e}")
-        lgpio.gpiochip_close(h)
+        cleanup()
