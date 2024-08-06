@@ -24,3 +24,6 @@ if __name__ == '__main__':
         # Clear the strip on exit
         strip.fill((0, 0, 0))
         strip.show()
+
+
+# This is my cool comment
